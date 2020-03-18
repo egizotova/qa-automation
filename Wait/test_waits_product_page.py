@@ -34,6 +34,7 @@ def test_quantity(parametrize_browser):
     :return:
     """
     browser = parametrize_browser
+    WebDriverWait(browser, 3)  # seconds
     in_put_q = browser.find_element_by_id(ProductPage.quantity)
     in_put_q.clear()
     in_put_q.click()
