@@ -1,8 +1,9 @@
-from opencart.locators import MainPage
 from opencart.locators import AdminPage
 from opencart.locators import CategoryPage
+from opencart.locators import MainPage
 from opencart.locators import ProductPage
 from opencart.locators import SearchPage
+
 
 def test_element_MP(browser):
     b = browser
@@ -47,17 +48,17 @@ def test_elevent_AP4(browser):
 def test_elevent_AP5(browser):
     bro = browser
     browser.get("https://demo.opencart.com/admin")
-    bro.find_elements_by_class_name(AdminPage.login)
+    bro.find_element_by_class_name(AdminPage.login)
 
 def test_elevent_CP1(browser):
     bro = browser
     browser.get("https://demo.opencart.com/index.php?route=product/category")
-    bro.find_elements_by_class_name(CategoryPage.contin)
+    bro.find_element_by_class_name(CategoryPage.contin)
 
 def test_elevent_CP2(browser):
     bro = browser
     browser.get("https://demo.opencart.com/index.php?route=product/category")
-    bro.find_elements_by_css_selector(CategoryPage.pre_img)
+    bro.find_element_by_css_selector(CategoryPage.pre_img)
 
 def test_elevent_CP3(browser):
     bro = browser

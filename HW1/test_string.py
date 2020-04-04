@@ -35,3 +35,10 @@ def test_str4(string_data_fixture):
     :return:
     """
     assert string_data_fixture.isdigit
+
+x=2
+def f():
+    return x+3
+
+x=5
+print(f(), x)
