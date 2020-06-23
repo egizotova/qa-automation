@@ -1,10 +1,10 @@
+
 from selenium.webdriver.common.by import By
 
 from pageobject.BasePage import BasePage
 
-
 class CommonLocators:
-    WISH = (By.CSS_SELECTOR, "#wishlist-total > span")
+    WISH = (By.CSS_SELECTOR, "#wishlist-total > i")
     EMAIL = (By.ID, "input-email")
     PASSWORD = (By.ID, "input-password")
     LOGIN = (By.CSS_SELECTOR, "#content > div > div:nth-child(2) > div > form > input.btn.btn-primary")
@@ -13,7 +13,9 @@ class CommonLocators:
 class Common(BasePage):
 
     def click_wishlist(self):
-        wishlist = self.find_element(CommonLocators.WISH).click()
+        wishlist = self.find_element(CommonLocators.WISH)
+        wishlist.execute_script("document.getElementById('save').click();")
+        wishlist.click()
         return wishlist
 
     def enter_email(self):

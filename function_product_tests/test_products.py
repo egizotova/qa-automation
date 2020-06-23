@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from opencart.locators import AdminPage
 from opencart.locators import ProductPage
+import allure
 
 
 def test_add_prod(parametrize_browser):
@@ -15,16 +16,20 @@ def test_add_prod(parametrize_browser):
 
     driver = parametrize_browser
     driver.get(driver.current_url + "/admin/")
+    allure.step("открыть сайт админ")
     username = driver.find_element_by_id(AdminPage.user_name)
     username.clear()
     username.click()
+    allure.step("ввести имя")
     username.send_keys("user")
     password = driver.find_element_by_id(AdminPage.password)
     password.clear()
     password.click()
     password.send_keys("bitnami1")
+    allure.step("ввести пароль")
     login_button = driver.find_element_by_css_selector(AdminPage.login)
     login_button.click()
+    allure.step("логинимся")
     catal = driver.find_element_by_id(AdminPage.catalog)
     catal.click()
     product = driver.find_element_by_css_selector(AdminPage.product_menu)

@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
-
 from pageobject.BasePage import BasePage
-
 
 class MainPageLocators:
     TOP_LINK = "top-links"
@@ -10,13 +8,12 @@ class MainPageLocators:
     GO_HOME = "common-home"
     FOOTER = "container"
     NEXT = "swiper-button-next"
-    CHECKOUT = (By.CSS_SELECTOR, "#top-links > ul > li:nth-child(5) > a > span")
-    CART_IN = (By.CSS_SELECTOR, "#top-links > ul > li:nth-child(4) > a > span")
+    CHECKOUT = (By.CSS_SELECTOR, "#top-links > ul > li:nth-child(5) > a > i")
+    CART_IN = (By.CSS_SELECTOR, "#top-links > ul > li:nth-child(4) > a > i")
     DROPDOWN_CART = (By.CSS_SELECTOR, "#cart > ul")
     BUTTON_CHECK = (By.CSS_SELECTOR, "# content > div.buttons.clearfix > div.pull-right > a")
     DELETE = (By.CSS_SELECTOR, "#content > form > div > table > tbody > tr > td:nth-child(4) > div > span > button.btn.btn-danger")
     EMPTY = (By.CSS_SELECTOR, "#content > p")
-
 
 class MainPage(BasePage):
 
@@ -26,8 +23,7 @@ class MainPage(BasePage):
         return search_cart
 
     def checkout_click(self):
-        check = self.find_element(MainPageLocators.CHECKOUT)
-        check.click()
+        check = self.find_element(MainPageLocators.CHECKOUT).click()
         return check
 
     def check_cart(self):

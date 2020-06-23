@@ -6,9 +6,9 @@ class BasePage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.base_url = "https://localhost"
+        self.base_url = "http://localhost"
 
-    def find_element(self, locator, time=9):
+    def find_element(self, locator, time=44):
         return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
                                                       message=f"Can't find element by locator {locator}")
 

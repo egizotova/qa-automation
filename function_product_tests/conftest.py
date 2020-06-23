@@ -43,18 +43,3 @@ def parametrize_browser(request):
     return driver
 
 
-def sum_a_b(a: int, b: int):
-    # c = a + b
-    return a + b
-
-
-def print_sum():
-    a = 5
-    b = 10
-    # c = sum_a_b(a, b)
-    print(str(sum_a_b(a, b)))
-
-
-if __name__ == '__main__':
-    print_sum()
-
