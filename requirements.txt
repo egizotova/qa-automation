@@ -2,4 +2,4 @@ allure-pytest==2.7.0
 requests==2.23.0
 pytest==4.6.9
 selenium==3.141.0
-ipython==5.9.0
+ipython==7.16.3
